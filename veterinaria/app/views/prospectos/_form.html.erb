@@ -1,0 +1,49 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<%= form_for(@prospecto) do |f| %>
+  <% if @prospecto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prospecto.errors.count, "error") %> prohibited this prospecto from being saved:</h2>
+
+      <ul>
+      <% @prospecto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_prospecto %><br />
+    <%= f.text_field :nombre_prospecto %>
+  </div>
+  <div class="field">
+    <%= f.label :correo_prospecto %><br />
+    <%= f.text_field :correo_prospecto %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen_prospecto %><br />
+	<input type="file" id="prospecto_imagen_prospecto" name="prospecto[imagen_prospecto]" size="40">
+  </div>
+  <div class="field">
+    <%= f.label :tel_casa_prospecto %><br />
+    <%= f.text_field :tel_casa_prospecto %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_cel_prospecto %><br />
+    <%= f.text_field :tel_cel_prospecto %>
+  </div>
+ <div class="field">
+    <%= f.label :Doctor %><br />
+   	<%= f.collection_select :Doctor_id, Doctor.all, :id, :nombre, :prompt => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

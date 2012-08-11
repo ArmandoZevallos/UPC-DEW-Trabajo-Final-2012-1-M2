@@ -1,0 +1,38 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @administrador.nombre %>
+</p>
+
+<p>
+  <b>Apellido:</b>
+  <%= @administrador.apellido %>
+</p>
+
+<p>
+  <b>Correo:</b>
+  <%= @administrador.correo %>
+</p>
+
+<p>
+  <b>Estado:</b>
+  <%= @administrador.Estado.descripcion %>
+</p>
+
+<p>
+  <b>Users:</b>
+  <%= @administrador.Users.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_administrador_path(@administrador) %> |
+<%= link_to 'Back', administradors_path %>

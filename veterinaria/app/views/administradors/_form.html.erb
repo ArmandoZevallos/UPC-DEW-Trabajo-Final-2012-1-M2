@@ -1,0 +1,46 @@
+<% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+
+<% end %>
+<%= form_for(@administrador) do |f| %>
+  <% if @administrador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@administrador.errors.count, "error") %> prohibited this administrador from being saved:</h2>
+
+      <ul>
+      <% @administrador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br />
+    <%= f.text_field :correo %>
+  </div>
+  <div class="field">
+    <%= f.label :Estado %><br />
+     <%= f.collection_select :Estado_id, Estado.all, :id, :descripcion, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :Users %><br />
+   <%= f.collection_select :Users_id, Users.all, :id, :email, :prompt => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

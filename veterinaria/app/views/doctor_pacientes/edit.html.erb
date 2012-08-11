@@ -1,0 +1,14 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<h1>Editing doctor_paciente</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @doctor_paciente %> |
+<%= link_to 'Back', doctor_pacientes_path %>

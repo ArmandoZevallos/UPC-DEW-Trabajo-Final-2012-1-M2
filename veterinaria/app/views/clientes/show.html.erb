@@ -1,0 +1,52 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre cliente:</b>
+  <%= @cliente.nombre_cliente %>
+</p>
+
+<p>
+  <b>Correo cliente:</b>
+  <%= @cliente.correo_cliente %>
+</p>
+
+<p>
+  <b>Imagen cliente:</b>
+  <%=raw "<img src='/assets/" + @cliente.imagen_cliente + "' width='70'>" %>
+</p>
+
+<p>
+  <b>Tel casa cliente:</b>
+  <%= @cliente.tel_casa_cliente %>
+</p>
+
+<p>
+  <b>Tel cel cliente:</b>
+  <%= @cliente.tel_cel_cliente %>
+</p>
+
+<p>
+  <b>Prospecto:</b>
+  <% if @cliente.Prospecto.nil? then %>
+	  vacio
+	<% else %>
+	  <%= @cliente.Prospecto.nombre_prospecto %>
+	<% end %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @cliente.Doctor.nombre %>
+</p>
+
+
+<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
+<%= link_to 'Back', clientes_path %>

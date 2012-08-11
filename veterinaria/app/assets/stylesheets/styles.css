@@ -1,0 +1,177 @@
+/*('Background_Web.jpg'); }*/
+/*('vintage-dog.gif'); }*/
+/*('Fondo-Perro.jpg'); }*/
+body{
+	
+	background-image:url('Fondo-Perro.jpg');
+	
+}
+h1, h2, h3 {
+	/*color: #fff;*/
+	text-shadow: 0 1px 0 #000;
+}
+
+label,
+label.ui-input-text {
+	text-shadow: 0 1px 0 #fff;
+	color: #2372B9;
+	font-size: 18px;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+.ui-page { /* cesped background */
+    background: url(/images/Fondo-Perro.jpg) repeat center 0 #dfdfdf;
+}
+
+.ui-content {
+    min-height: 350px;
+}
+
+.ui-header .ui-btn-right {
+	float: right;
+	position: relative;
+}
+
+.ui-content .rounded-content {
+	/*background: #fff;*/
+	margin: 0px 0px 15px 0px;
+	padding: 10px;
+	-moz-border-radius: 0.6em 0.6em 0.6em 0.6em;
+	-webkit-border-radius: 0.6em;
+	border-radius: 0.6em;
+
+	-webkit-box-shadow: #666 0px 2px 2px;
+	-moz-box-shadow: #666 0px 2px 2px;
+	box-shadow: #666 0px 2px 2px;
+}
+
+.ui-content .rounded-content#index .ui-listview-filter-inset {
+	margin: 0 -5px -15px -5px;
+}
+
+.ui-li-divider, .ui-li-static {
+	font-size: 16px;
+}
+
+.inactive {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+/* HEADER */
+#logo,
+#user-login {
+	display: inline-block;
+}
+
+#user-login {
+	float: right;
+}
+
+#user-login img {
+	width: 30px;
+	height: 30px;
+}
+
+.ui-header {
+	padding: 15px;
+	width: auto;
+}
+
+.ui-header h3.ui-title {
+	margin-left: 0;
+}
+
+.user-name {
+	cursor: pointer;
+}
+
+.user-name {
+	color: #2ad1e5;
+}
+
+.user-name:hover {
+	color: silver;
+}
+
+/***************/
+
+/* FOOTER */
+/*.ui-footer {
+	background: url(/images/bg-footer.png) repeat-x center 0;
+	height: 151px;
+	width: 100%;
+	border: none;
+}*/
+
+/************/
+
+/* twitter */
+.bg-twitter {
+	background: url(/images/bg-twitter.png) no-repeat center 0;
+	display: block;
+    height: 195px;
+    overflow: visible;
+    position: relative;
+    text-align: center;
+    width: auto;
+    padding: 40px 0px;
+}
+
+.btn-twitter {
+	display: inline-block;
+    overflow: visible;
+    position: relative;
+    top: 52px;
+}
+/************/
+
+/* Pichangas */
+#fechaInicio {
+	display: block;
+    overflow: visible;
+}
+
+#fechaInicio .ui-select {
+	display: inline-block;
+}
+
+#fechaInicio label,
+#cancha label {
+	display: block;
+    line-height: 1.4;
+    margin: 0 0 0.3em;
+}
+
+.rounded-content h3 {
+	/*color: #000000;*/
+    text-shadow: 0 1px 0 silver;
+}
+
+/********************/
+
+/* NEW */
+#new .actions .ui-btn {
+	background: -webkit-linear-gradient(#555555, #333333);
+	background: -moz-linear-gradient(#555555, #333333);
+	background: -ms-linear-gradient(#555555, #333333);
+	background: -o-linear-gradient(#555555, #333333);
+	background: linear-gradient(#555555, #333333);
+
+    border: 1px solid #222222;
+    /*color: #FFFFFF;*/
+    font-weight: bold;
+    text-shadow: 0 -1px 1px #145072;
+}
+
+#new .actions .ui-btn.ui-btn-hover-c {
+	background: -webkit-linear-gradient(#666666, #444444);
+	background: -moz-linear-gradient(#666666, #444444);
+	background: -ms-linear-gradient(#666666, #444444);
+	background: -o-linear-gradient(#666666, #444444);
+	background: linear-gradient(#666666, #444444);
+}

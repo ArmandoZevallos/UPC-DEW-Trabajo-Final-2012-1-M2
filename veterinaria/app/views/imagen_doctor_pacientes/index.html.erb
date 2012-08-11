@@ -1,0 +1,35 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<h1>Listing imagen_doctor_pacientes</h1>
+
+<table>
+  <tr>
+    <th>Imagen</th>
+    <th>Doctorpaciente</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @imagen_doctor_pacientes.each do |imagen_doctor_paciente| %>
+  <tr>
+    <td>
+	<%=raw "<img src='/assets/" + imagen_doctor_paciente.imagen + "' width='60'>" %>
+	</td>
+    <td><%= imagen_doctor_paciente.DoctorPaciente.nota_paciente %></td>
+    <td><%= link_to 'Show', imagen_doctor_paciente %></td>
+    <td><%= link_to 'Edit', edit_imagen_doctor_paciente_path(imagen_doctor_paciente) %></td>
+    <td><%= link_to 'Destroy', imagen_doctor_paciente, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Imagen doctor paciente', new_imagen_doctor_paciente_path %>

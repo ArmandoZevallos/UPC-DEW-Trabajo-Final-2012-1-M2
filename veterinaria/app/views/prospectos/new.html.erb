@@ -1,0 +1,13 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<h1>New prospecto</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', prospectos_path %>

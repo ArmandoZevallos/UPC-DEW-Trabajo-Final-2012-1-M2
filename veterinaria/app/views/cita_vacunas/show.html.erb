@@ -1,0 +1,48 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre vacuna:</b>
+  <%= @cita_vacuna.nombre_vacuna %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @cita_vacuna.telefono %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @cita_vacuna.direccion %>
+</p>
+
+<p>
+  <b>Fecha registro:</b>
+  <%= @cita_vacuna.fecha_registro %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @cita_vacuna.Cliente.nombre_cliente %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @cita_vacuna.Doctor.nombre %>
+</p>
+
+<p>
+  <b>Paciente:</b>
+  <%= @cita_vacuna.Paciente.especie %>
+</p>
+
+
+<%= link_to 'Edit', edit_cita_vacuna_path(@cita_vacuna) %> |
+<%= link_to 'Back', cita_vacunas_path %>

@@ -1,0 +1,33 @@
+ <% if session[:logeado].nil? %>
+
+<script type="text/javascript">
+<!--
+window.location = "/sessions/new"
+//-->
+</script>
+<% end %>
+<%= form_for(@imagen_doctor_paciente) do |f| %>
+  <% if @imagen_doctor_paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@imagen_doctor_paciente.errors.count, "error") %> prohibited this imagen_doctor_paciente from being saved:</h2>
+
+      <ul>
+      <% @imagen_doctor_paciente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :imagen %><br />
+	<input type="file" id="imagen_doctor_paciente_imagen" name="imagen_doctor_paciente[imagen]" size="40">
+  </div>
+  <div class="field">
+    <%= f.label :DoctorPaciente %><br />
+  	<%= f.collection_select :DoctorPaciente_id, DoctorPaciente.all, :id, :nota_paciente, :prompt => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
